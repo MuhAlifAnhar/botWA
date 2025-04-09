@@ -1,5 +1,6 @@
 const { Controller, Response } = require("pepesan");
 const f = require("../utils/Formatter");
+const gsheet = require("../service/gsheet");
 
 module.exports = class BotController extends Controller {
 
@@ -45,17 +46,8 @@ module.exports = class BotController extends Controller {
     }
 
     async lihatProject(request) {    
-      return Response.menu.fromArrayOfObject(
-        [
-          {
-            value: `menu.project`, 
-            text: f("menu.project"),
-            code: "3"
-          }
-        ],
-        "",
-        f("template.menu")  
-      );
+      const responseStr = await gsheet.getData(request.number);
+      return this.reply(responseStr);
     }
 
 }

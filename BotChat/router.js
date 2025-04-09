@@ -6,6 +6,7 @@ const router = new Router();
 
 router.menu(f("menu.daftarProduk"), [BotController, "product"]);
 router.menu(f("menu.alamatKantor"), [BotController, "alamatKantor"]);
+router.menu(f("menu.project"), [BotController, "lihatProject"]);
 router.keyword("*", [BotController, "introduction"]);
 
 module.exports = router;
