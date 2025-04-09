@@ -8,7 +8,8 @@ module.exports = class BotController extends Controller {
       return Response.menu.fromArrayOfString(
         [
           f("menu.daftarProduk"),
-          f("menu.alamatKantor")
+          f("menu.alamatKantor"),
+          f("menu.project"),
         ],
         f("intro", [request.name]),
         f("template.menu")
@@ -16,47 +17,45 @@ module.exports = class BotController extends Controller {
     }
 
     async product(request) {
-      return this.reply(`
-        🧠 Daftar Produk & Layanan dari Wecode Solution:
-
-        1. 💻 Pembuatan Website
-          - Company Profile, E-Commerce, Web Aplikasi
-
-        2. 📱 Pembuatan Aplikasi Mobile
-          - Android / iOS (Hybrid & Native)
-
-        3. ⚙️ Sistem Informasi Kustom
-          - Sistem Keuangan, Inventory, CRM, dll
-
-        4. 🎨 UI/UX Design
-          - Desain aplikasi/web profesional & user-friendly
-
-        5. ☁️ Integrasi Cloud & API
-          - Hosting, Server, dan Integrasi API pihak ketiga
-
-        📩 Untuk konsultasi atau penawaran harga, silakan hubungi kami di:
-        Instagram: @itsalifanhar
-        WhatsApp: 08xx-xxxx-xxxx
+      await this.reply(`🧠 Daftar Produk & Layanan dari Wecode Solution:\n\n1. 💻 Pembuatan Website\n   - Company Profile, E-Commerce, Web Aplikasi\n\n2. 📱 Pembuatan Aplikasi Mobile\n   - Android / iOS (Hybrid & Native)\n\n3. ⚙️ Sistem Informasi Kustom\n   - Sistem Keuangan, Inventory, CRM, dll\n\n4. 🎨 UI/UX Design\n   - Desain aplikasi/web profesional & user-friendly\n\n5. ☁️ Integrasi Cloud & API\n   - Hosting, Server, dan Integrasi API pihak ketiga
       `);
+      await this.reply(f("footer"));
+      return this.sendBasicMenu(request);
     }
 
     async alamatKantor(request) {
-      return this.reply(`
-        🏢 Alamat Kantor Kami:
-
-        Wecode Solution
-        📍 Jl. Banta-Bantaeng, Makassar, Sulawesi Selatan  
-        🕘 Jam Operasional:  
-        Senin - Jumat: 09.00 - 17.00  
-        Sabtu - Minggu: Libur
-
-        📞 Kontak:
-        WhatsApp: 08xx-xxxx-xxxx  
-        📧 Email: sultankautsar21@gmail.com  
-        🌐 Instagram: @itsalifanhar
-
-        Kami siap bantu kebutuhan digital kamu ✨
+      await this.reply(`🏢 Alamat Kantor Kami:\n\nWecode Solution\n📍 Jl. Banta-Bantaeng, Makassar, Sulawesi Selatan\n🕘 Jam Operasional:\nSenin - Jumat: 09.00 - 17.00\nSabtu - Minggu: Libur\n\n📞 Kontak:\nWhatsApp: 08xx-xxxx-xxxx\n📧 Email: \nsultankautsar21@gmail.com\n🌐 Instagram: @itsalifanhar\n\nKami siap bantu kebutuhan digital kamu ✨
       `);
+      await this.reply(f("footer"));
+      return this.sendBasicMenu(request);
+    }
+
+    async sendBasicMenu(request) {    
+      return Response.menu.fromArrayOfObject(
+        [
+          {
+            value: `menu.back`, 
+            text: f("menu.back"),
+            code: "0"
+          }
+        ],
+        "",
+        f("template.menu")  
+      );
+    }
+
+    async lihatProject(request) {    
+      return Response.menu.fromArrayOfObject(
+        [
+          {
+            value: `menu.project`, 
+            text: f("menu.project"),
+            code: "3"
+          }
+        ],
+        "",
+        f("template.menu")  
+      );
     }
 
 }
