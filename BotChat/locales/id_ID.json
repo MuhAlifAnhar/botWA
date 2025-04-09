@@ -1,6 +1,6 @@
 {
-    "intro": "Selamat datang",
+    "intro": "👋Selamat datang di Wecode Solution!",
     "template.menu": "Ketik angka *{{number}}* : untuk *{{menu}}*",
-    "menu.daftarProduk": "🧰 Daftar Produk",
-    "menu.alamatKantor": "Alamat Kantor"
+    "menu.daftarProduk": "🖥️ Daftar Produk & Layanan",
+    "menu.alamatKantor": "📍 Alamat & Kontak Kantor"
 }
