@@ -47,7 +47,9 @@ module.exports = class BotController extends Controller {
 
     async lihatProject(request) {    
       const responseStr = await gsheet.getData(request.number);
-      return this.reply(responseStr);
+      await this.reply(f("menu.headerProject"));
+      await this.reply(responseStr);
+      return this.sendBasicMenu(request);
     }
 
 }
