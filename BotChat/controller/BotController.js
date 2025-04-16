@@ -18,7 +18,8 @@ module.exports = class BotController extends Controller {
     }
 
     async product(request) {
-      await this.reply(`🧠 Daftar Produk & Layanan dari Wecode Solution:\n\n1. 💻 Pembuatan Website\n   - Company Profile, E-Commerce, Web Aplikasi\n\n2. 📱 Pembuatan Aplikasi Mobile\n   - Android / iOS (Hybrid & Native)\n\n3. ⚙️ Sistem Informasi Kustom\n   - Sistem Keuangan, Inventory, CRM, dll\n\n4. 🎨 UI/UX Design\n   - Desain aplikasi/web profesional & user-friendly\n\n5. ☁️ Integrasi Cloud & API\n   - Hosting, Server, dan Integrasi API pihak ketiga
+      await this.reply(`🧠 Daftar Produk & Layanan dari ZeeTech:\n\n1. 💻 Pembuatan Website\n   - Company Profile, E-Commerce, Web Aplikasi\n\n2. 📱 Pembuatan Aplikasi Mobile\n   - Android / iOS (Hybrid & Native)\n\n3. ⚙️ Sistem Informasi Kustom\n   - Sistem Keuangan, Inventory, CRM, dll\n\n4. 🎨 UI/UX Design\n   - Desain aplikasi/web profesional & user-friendly\n\n5. ☁️ Integrasi Cloud & API\n   - Hosting, Server, dan Integrasi API pihak ketiga\n\n6. 🛠️ Instalasi Jaringan & Infrastruktur IT  
+   - Jaringan LAN/WiFi, Setup Server & Router, Maintenance Rutin
       `);
       await this.reply(f("footer"));
       return this.sendBasicMenu(request);

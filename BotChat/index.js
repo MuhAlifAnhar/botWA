@@ -5,7 +5,7 @@ const { ALLOWED_NUMBERS } = process.env;
 
 (async () => {
     const config = {
-        allowedNumbers: ALLOWED_NUMBERS ? ALLOWED_NUMBERS.split(',') : null,
+        // allowedNumbers: ALLOWED_NUMBERS ? ALLOWED_NUMBERS.split(',') : null,
         browserName: 'ZeeTech'
     }
     const pepesan = Pepesan.init(router, config)
